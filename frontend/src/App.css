@@ -1,0 +1,41 @@
+.home-body{
+  background-image: linear-gradient(270deg, rgba(188, 236, 188, 0.297), rgba(163, 150, 150, 0.339), rgba(220, 20, 60, 0.062)), url("https://images6.alphacoders.com/114/1142152.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.nav-item .active{
+  font-weight: bold;
+  border-bottom: 2px solid blueviolet;
+  color: blueviolet !important;
+}
+
+.formcontainer {
+  background-color: white;
+  /* border: 1px solid; */
+  width: 45%;
+  padding: 30px;
+  /* height: 80vh; */
+}
+
+.form-body {
+  background: #B993D6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8CA6DB, #B993D6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Montserrat;
+  width: 100%;
+}
+
+.login-body{
+  background-image: linear-gradient(270deg, rgba(188, 236, 188, 0.297), rgba(163, 150, 150, 0.339), rgba(220, 20, 60, 0.062)), url("https://images6.alphacoders.com/114/1142152.jpg");
+  background-size: cover; 
+  height: 100vh;
+}
