@@ -1,7 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import UseAppContext from '../AppContext';
 
 const Navbar = () => {
+
+    const { loggedIn, logout } = UseAppContext();
+
+    const [currentUser, setCurrentUser] = useState(
+        JSON.parse(sessionStorage.getItem('user'))
+    );
+
+    const displayUserOption = () => {
+        if (loggedIn) {
+            return (
+                <>
+                    <li className='nav-item'><button className='btn btn-danger' onClick={logout}>Logout</button></li>
+                </>
+            )
+        }
+        else {
+            return (
+                <>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/login">
+                            Login
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/signup">
+                            Signup
+                        </NavLink>
+                    </li>
+                </>
+            )
+        }
+    }
+
     return (
         <div className=''>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -28,17 +62,14 @@ const Navbar = () => {
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" to="/managetasks">
-                               <font className='fs-5'>ManageTasks</font> 
-                            </NavLink>
-                        </li>
+                                <NavLink className="nav-link" to="/managetasks">
+                                    <font className='fs-5'>ManageTasks</font>
+                                </NavLink>
+                            </li>
                         </ul>
-                        <a href="/signup" className="btn btn-outline-primary me-2">
-                            <font className='fs-5 fw-bold'>Sign Up</font>
-                        </a>
-                        <a href="/login" className="btn btn-outline-primary">
-                            <font className='fs-5 fw-bold'>Login</font>
-                        </a>
+                        <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
+                            {displayUserOption()}
+                        </ul>
                     </div>
                 </div>
             </nav>

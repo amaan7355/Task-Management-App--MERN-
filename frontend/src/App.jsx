@@ -8,20 +8,23 @@ import Login from './components/Login';
 import ManageTasks from './components/ManageTasks';
 import UserAuth from './UserAuth';
 import UpdateTask from './components/UpdateTask';
+import { AppProvider } from './AppContext';
 
 const App = () => {
   return (
     <div>
-        <BrowserRouter>
-        <Navbar />
-        <Routes>
+      <BrowserRouter>
+        <AppProvider>
+          <Navbar />
+          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="/updatetask/:id" element={<UpdateTask />} />
             <Route path="/managetasks" element={<UserAuth><ManageTasks /></UserAuth>} />
-        </Routes>
-        </BrowserRouter>
+          </Routes>
+        </AppProvider>
+      </BrowserRouter>
     </div>
   )
 }

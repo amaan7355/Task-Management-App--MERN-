@@ -1,12 +1,14 @@
 import { useFormik } from "formik";
 import React from "react";
 import Swal from "sweetalert2";
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import UseAppContext from "../AppContext";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
 
-  // const {setLoggedIn} = UseAppContext();
+  const { setLoggedIn } = UseAppContext();
 
   const loginForm = useFormik({
     initialValues: {
@@ -31,7 +33,13 @@ const Login = () => {
         Swal.fire({
           icon: 'success',
           title: 'Login Successfull',
-        });
+        })
+          .then((result) => {
+            navigate('/managetasks');
+
+          }).catch((err) => {
+
+          });
 
         const data = await res.json();
         console.log(data);
@@ -57,17 +65,17 @@ const Login = () => {
 
   return (
     <motion.div
-      initial={{x: '100%'}}
-      animate={{x: 0}}
-      exit={{x: '-100%'}}
-      transition={{duration: 0.5, stiffness: 100, type: 'spring', damping: 4}}
+      initial={{ x: '100%' }}
+      animate={{ x: 0 }}
+      exit={{ x: '-100%' }}
+      transition={{ duration: 0.5, stiffness: 100, type: 'spring', damping: 4 }}
 
-    className="login-body">
+      className="login-body">
       <div className="col-md-3 d-flex m-auto pt-5">
         <div className="card shadow w-100">
           <div className="card-body">
             <form onSubmit={loginForm.handleSubmit}>
-            <img className="logo" src="logo.png" alt=""/>
+              <img className="logo" src="logo.png" alt="" />
               <h2 className="text-center my-3">Login Here</h2>
 
               <label>Email</label>
