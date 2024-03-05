@@ -17,7 +17,7 @@ const Home = () => {
             }, 3000);
 
             // send the data to the server
-            const res = await fetch('http://localhost:5000/task/add', {
+            const res = await fetch('https://taskmanagementbackend-6llq.onrender.com/task/add', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {

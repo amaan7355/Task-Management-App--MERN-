@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const ManageTasks = () => {
   const [taskData, setTaskData] = useState([]);
   const fetchTaskData = async () => {
-    const res = await fetch('https://taskmanagement-4rzy.onrender.com/task/getall');
+    const res = await fetch('https://taskmanagementbackend-6llq.onrender.com/task/getall');
     console.log(res.status);
 
     if (res.status === 200) {
@@ -20,7 +20,7 @@ const ManageTasks = () => {
   }, []);
 
   const deleteTask = async (id) => {
-      const res = await fetch ('https://taskmanagement-4rzy.onrender.com/delete/'+id, {method: 'DELETE'});
+      const res = await fetch ('https://taskmanagementbackend-6llq.onrender.com/delete/'+id, {method: 'DELETE'});
       if (res.status === 200){
         Swal.fire({
           icon: 'success',

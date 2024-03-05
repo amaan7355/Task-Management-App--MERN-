@@ -10,7 +10,7 @@ const UpdateTask = () => {
     const [taskData, setTaskData] = useState(null);
 
     const fetchTaskData = async () => {
-        const res = await fetch(`https://taskmanagement-4rzy.onrender.com/task/getbyid/${id}`);
+        const res = await fetch(`https://taskmanagementbackend-6llq.onrender.com/task/getbyid/${id}`);
         if (res.status === 200) {
             const data = await res.json();
             console.log(data);
@@ -26,7 +26,7 @@ const UpdateTask = () => {
         console.log(values);
 
 
-        const res = await fetch(`https://taskmanagement-4rzy.onrender.com/task/update/${id}`, {
+        const res = await fetch(`https://taskmanagementbackend-6llq.onrender.com/task/update/${id}`, {
             method: 'PUT',
             body: JSON.stringify(values),
             headers: {

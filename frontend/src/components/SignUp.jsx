@@ -33,7 +33,7 @@ const SignUp = () => {
       }, 3000);
 
       // send the data to the server
-      const res = await fetch('https://taskmanagement-4rzy.onrender.com/user/add', {
+      const res = await fetch('https://taskmanagementbackend-6llq.onrender.com/user/add', {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
@@ -76,7 +76,7 @@ const SignUp = () => {
     const fd = new FormData();
     fd.append('myfile', file);
 
-    const res = await fetch('https://taskmanagement-4rzy.onrender.com/utils/uploadfile', {
+    const res = await fetch('https://taskmanagementbackend-6llq.onrender.com/utils/uploadfile', {
       method: 'POST',
       body: fd
     });
