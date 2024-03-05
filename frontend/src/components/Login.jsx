@@ -71,8 +71,8 @@ const Login = () => {
       transition={{ duration: 0.5, stiffness: 100, type: 'spring', damping: 4 }}
 
       className="login-body">
-      <div className="col-md-3 d-flex m-auto pt-5">
-        <div className="card shadow w-100">
+      <div className="pt-5">
+        <div className="card shadow w-50 d-flex m-auto">
           <div className="card-body">
             <form onSubmit={loginForm.handleSubmit}>
               <img className="logo" src="logo.png" alt="" />
