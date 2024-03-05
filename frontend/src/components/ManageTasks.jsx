@@ -33,7 +33,7 @@ const ManageTasks = () => {
 
 
   return (
-    <div className='container py-5'>
+    <div className='py-5'>
       <h1 className='text-center'>Manage Task</h1>
 
       <table className='table table-secondary mt-5'>
