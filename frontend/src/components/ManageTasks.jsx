@@ -20,7 +20,7 @@ const ManageTasks = () => {
   }, []);
 
   const deleteTask = async (id) => {
-      const res = await fetch ('https://taskmanagementbackend-6llq.onrender.com/delete/'+id, {method: 'DELETE'});
+      const res = await fetch ('https://taskmanagementbackend-6llq.onrender.com/task/delete/'+id, {method: 'DELETE'});
       if (res.status === 200){
         Swal.fire({
           icon: 'success',
